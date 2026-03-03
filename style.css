@@ -39,23 +39,23 @@
 :root {
 	interpolate-size: allow-keywords;
 
-	--background: linear-gradient(45deg, #0c0a09 0%, #1c1917 45%, #0c0a09 100%);
-	--header: linear-gradient(90deg, #1c1917e0, #2dd4bf, #0c0a09);
-	--btn-accent: linear-gradient(135deg, #fb923c, #ea580c);
-	--btn-inherit: #fff7ed;
-	--accent: linear-gradient(135deg, #f97316, #c2410c);
-	--sub-title: linear-gradient(-135deg, #2dd4bf30, #042f2e);
-	--gift: #f0fdfae1;
-	--gift-bg: rgba(251, 146, 60, 0.1);
-	--gift-btn: linear-gradient(135deg, #9a3412, #431407);
-	--border-radius: 10px;
-	--container: #0c0a09;
-	--table: linear-gradient(180deg, #1c1917, #0c0a09);
-	--minus: #38bdf8;
-	--shadow: #fb923c50;
-	--second-shadow: #ea580c;
-	--text-shadow: #2dd4bf;
-	--list-bg: linear-gradient(90deg, rgba(45, 212, 191, 0.1), rgba(251, 146, 60, 0.1));
+	--background: linear-gradient(45deg, #0f0714 0%, #1a0b2e 45%, #0f0714 100%);
+	--header: linear-gradient(90deg, #1a0b2ee0, #f43f5e, #8b5cf6);
+	--btn-accent: linear-gradient(135deg, #fb7185, #d946ef);
+	--btn-inherit: #fff1f2;
+	--accent: linear-gradient(135deg, #ec4899, #7e22ce);
+	--sub-title: linear-gradient(-135deg, #f43f5e30, #2e1065);
+	--gift: #fdf2f8;
+	--gift-bg: rgba(244, 63, 94, 0.15);
+	--gift-btn: linear-gradient(135deg, #701a75, #4c0519);
+	--border-radius: 12px;
+	--container: #0f0714;
+	--table: linear-gradient(180deg, #1a0b2e, #0f0714);
+	--minus: #2dd4bf; /* Контрастний м'ятний для балансу */
+	--shadow: rgba(236, 72, 153, 0.4);
+	--second-shadow: #8b5cf6;
+	--text-shadow: #fb7185;
+	--list-bg: linear-gradient(90deg, rgba(236, 72, 153, 0.1), rgba(139, 92, 246, 0.1));
 }
 
 * {
@@ -201,6 +201,25 @@ header {
 	overflow: hidden;
 }
 
+.logo {
+	position: relative;
+}
+
+.blob {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	background: linear-gradient(135deg, #facc15, #f97316);
+	box-shadow:
+		0 0 50px rgba(250, 204, 21, 0.4),
+		inset 10px -10px 20px rgba(0, 0, 0, 0.1);
+	border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+	animation: morph 8s ease-in-out infinite;
+
+	filter: blur(1px);
+	z-index: -1;
+}
+
 header img {
 	width: 120px;
 	height: auto;
@@ -211,12 +230,14 @@ header img {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	gap: 10px;
 }
 
 .h-violet-btn {
 	padding: 10px 20px;
 	font-size: 1rem;
 	border: 1px solid var(--btn-inherit);
+	border-radius: var(--border-radius);
 	margin-right: 5px;
 	font-weight: 700;
 	transition: all 0.3s ease-in-out;
@@ -226,7 +247,10 @@ header img {
 	padding: 12px 20px;
 	font-size: 1rem;
 	background: var(--btn-accent);
-	box-shadow: 3px 3px 3px var(--gift);
+	box-shadow:
+		3px 0 3px var(--gift),
+		-3px 0 3px var(--minus);
+	border-radius: var(--border-radius);
 	text-align: center;
 	font-weight: 700;
 	transition: all 0.3s ease;
